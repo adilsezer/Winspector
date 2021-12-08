@@ -1,0 +1,12 @@
+﻿<Application x:Class="WinspectorUI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WinspectorUI"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style x:Key="FontStyle" TargetType="{x:Type Control}">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontFamily" Value="Bahnschrift SemiLight SemiCondensed" />
+        </Style>
+    </Application.Resources>
+</Application>

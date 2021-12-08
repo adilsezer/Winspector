@@ -1,0 +1,38 @@
+﻿<Window x:Class="WinspectorUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WinspectorUI"
+        mc:Ignorable="d"
+        Title="Winspector" Height="450" Width="800" MinHeight="450" MinWidth="800"
+        Style="{StaticResource FontStyle}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Fill= "Lavender" />
+        <Rectangle Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Fill= "Lavender" />
+        <Label Content="'Start Winspecting' dynamically by moving your mouse" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" />
+        <Label Content="github.com/sezerad" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" />
+        <DataGrid x:Name="elementGrid"
+                  Grid.Row="1"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="3"
+                  AutoGenerateColumns="True"
+                  HorizontalAlignment="Stretch"
+                  HorizontalContentAlignment="Stretch"
+                  ColumnWidth="*"
+                  HeadersVisibility="Column"
+                  HorizontalGridLinesBrush="DarkGray"
+                  VerticalGridLinesBrush="DarkGray">
+        </DataGrid>
+    </Grid>
+</Window>
