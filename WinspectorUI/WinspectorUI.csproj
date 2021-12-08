@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{44DC9C29-5899-4293-8670-C9251FDA2CC5}</ProjectGuid>
+    <ProjectGuid>{88383D4C-FCA3-4542-8747-60AFBCDF8EEC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>WinspectorUI</RootNamespace>
     <AssemblyName>WinspectorUI</AssemblyName>
@@ -100,17 +100,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="WinspectorIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\MousePositioners\MousePositioners.csproj">
-      <Project>{b4b27e72-4786-4405-a947-09d60a2b847f}</Project>
+      <Project>{142ead84-1ab7-4cda-b192-7ef2ec677828}</Project>
       <Name>MousePositioners</Name>
     </ProjectReference>
     <ProjectReference Include="..\UIAElementModel\UIAElementModel.csproj">
-      <Project>{4f4e8e14-a9d3-41a8-b875-293203ef0ae6}</Project>
+      <Project>{bd062182-f634-4a41-9ebc-9b5e3e57119e}</Project>
       <Name>UIAElementModel</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="WinspectorIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

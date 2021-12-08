@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinspectorUI", "WinspectorUI\WinspectorUI.csproj", "{88383D4C-FCA3-4542-8747-60AFBCDF8EEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MousePositioners", "MousePositioners\MousePositioners.csproj", "{142EAD84-1AB7-4CDA-B192-7EF2EC677828}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIAElementModel", "UIAElementModel\UIAElementModel.csproj", "{BD062182-F634-4A41-9EBC-9B5E3E57119E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88383D4C-FCA3-4542-8747-60AFBCDF8EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88383D4C-FCA3-4542-8747-60AFBCDF8EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88383D4C-FCA3-4542-8747-60AFBCDF8EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88383D4C-FCA3-4542-8747-60AFBCDF8EEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{142EAD84-1AB7-4CDA-B192-7EF2EC677828}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{142EAD84-1AB7-4CDA-B192-7EF2EC677828}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{142EAD84-1AB7-4CDA-B192-7EF2EC677828}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{142EAD84-1AB7-4CDA-B192-7EF2EC677828}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD062182-F634-4A41-9EBC-9B5E3E57119E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD062182-F634-4A41-9EBC-9B5E3E57119E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD062182-F634-4A41-9EBC-9B5E3E57119E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD062182-F634-4A41-9EBC-9B5E3E57119E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF46666C-AFF6-4438-B568-10692DC8034D}
+	EndGlobalSection
+EndGlobal
