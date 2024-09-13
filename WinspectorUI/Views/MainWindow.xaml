@@ -22,7 +22,7 @@
         </Grid.ColumnDefinitions>
 
         <Label Content="Start Winspecting by moving your mouse" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" />
-        <Label Content="github.com/sezerad" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" />
+        <Label Content="github.com/adilsezer" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" />
 
         <DataGrid x:Name="elementGrid"
                   Grid.Row="1"

@@ -15,43 +15,57 @@ namespace Winspector.Models
 
         public UIAElement(AutomationElement element)
         {
-            if (element == null) return;
+            if (element == null)
+            {
+                throw new ArgumentNullException(nameof(element), "AutomationElement cannot be null");
+            }
 
             Properties = new Dictionary<string, string>();
 
             try
             {
-                // Basic information
-                Name = element.Current.Name;
-                ClassName = element.Current.ClassName;
-                AutomationId = element.Current.AutomationId;
-                ProcessId = element.Current.ProcessId.ToString();
-                ControlType = element.Current.ControlType.ProgrammaticName;
+                // Safely access each property and handle potential nulls
+                Name = SafeGetProperty(() => element.Current.Name, "N/A");
+                ClassName = SafeGetProperty(() => element.Current.ClassName, "N/A");
+                AutomationId = SafeGetProperty(() => element.Current.AutomationId, "N/A");
+                ProcessId = SafeGetProperty(() => element.Current.ProcessId.ToString(), "N/A");
+                ControlType = SafeGetProperty(() => element.Current.ControlType.ProgrammaticName, "N/A");
 
-                // Add the basic properties to the dictionary
+                // Add basic properties to the dictionary
                 Properties["Name"] = Name;
-                Properties["ClassName"] = ClassName;
-                Properties["AutomationId"] = AutomationId;
-                Properties["ProcessId"] = ProcessId;
-                Properties["ControlType"] = ControlType;
+                Properties["Class Name"] = ClassName;
+                Properties["Automation ID"] = AutomationId;
+                Properties["Process ID"] = ProcessId;
+                Properties["Control Type"] = ControlType;
 
                 // Fetch and store all supported properties
                 var supportedProperties = element.GetSupportedProperties();
                 foreach (var property in supportedProperties)
                 {
-                    object propertyValue = element.GetCurrentPropertyValue(property);
+                    object propertyValue = SafeGetProperty(() => element.GetCurrentPropertyValue(property), "N/A");
                     Properties[property.ProgrammaticName] = propertyValue?.ToString() ?? "N/A";
                 }
             }
             catch (ElementNotAvailableException)
             {
-                // Handle the exception if the element is not available anymore
                 Properties["Error"] = "Element not available";
             }
             catch (Exception ex)
             {
-                // General exception handling
                 Properties["Error"] = $"Exception: {ex.Message}";
+            }
+        }
+
+        // Helper method to safely get a property value with fallback
+        private static T SafeGetProperty<T>(Func<T> propertyGetter, T defaultValue)
+        {
+            try
+            {
+                return propertyGetter();
+            }
+            catch
+            {
+                return defaultValue;
             }
         }
 
