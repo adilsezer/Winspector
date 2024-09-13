@@ -29,7 +29,10 @@ namespace Winspector.Models
                 ClassName = SafeGetProperty(() => element.Current.ClassName, "N/A");
                 AutomationId = SafeGetProperty(() => element.Current.AutomationId, "N/A");
                 ProcessId = SafeGetProperty(() => element.Current.ProcessId.ToString(), "N/A");
-                ControlType = SafeGetProperty(() => element.Current.ControlType.ProgrammaticName, "N/A");
+
+                // Safely handle null ControlType
+                var controlType = SafeGetProperty(() => element.Current.ControlType, null);
+                ControlType = controlType != null ? controlType.ProgrammaticName : "N/A";
 
                 // Add basic properties to the dictionary
                 Properties["Name"] = Name;
