@@ -1,7 +1,32 @@
+# Ignore Visual Studio temporary files, build results, and
+# including all other generated files specific to Visual Studio
+
+## Ignore Visual Studio temporary files, build results, and
+## including all other generated files specific to Visual Studio
+.vscode/
+.vs/
 *.suo
 *.user
-_ReSharper.*
-bin
-obj
-packages
-*DS_Store*
+*.userosscache
+*.sln.docstates
+*.log
+*.pdb
+*.obj
+*.exe
+*.dll
+*.cache
+*.ilk
+*.nupkg
+*.snupkg
+*.tmp
+*.csproj.user
+bin/
+obj/
+
+# Ignore NuGet packages
+*.nupkg
+*.snupkg
+packages/
+
+# Ignore test results
+TestResults/

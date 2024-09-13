@@ -1,15 +1,10 @@
-﻿using MousePositioners;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Automation;
-using UIAElementModel;
+using Winspector.Models;
 
-namespace WinspectorUI
+namespace Winspector
 {
     public class DataGridItem
     {
@@ -53,7 +48,7 @@ namespace WinspectorUI
         {
             ObservableCollection<DataGridItem> dataGridCollection = new ObservableCollection<DataGridItem>();
             Tuple<int, int> mousePosition = MousePosition.GetMousePosition();
-            AutomationElement element = UIAElement.GetAutomationElementFromPoint(mousePosition.Item1, mousePosition.Item2);
+            AutomationElement element = UIAElement.GetElementFromPoint(mousePosition.Item1, mousePosition.Item2);
             UIAElement uiElement = new UIAElement(element);
 
             foreach (var prop in uiElement.GetType().GetProperties())
