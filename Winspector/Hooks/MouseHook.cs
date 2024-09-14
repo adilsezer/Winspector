@@ -37,7 +37,7 @@ namespace Winspector
             if (nCode >= 0 && MouseMessages.WM_MOUSEMOVE == (MouseMessages)wParam)
             {
                 MSLLHOOKSTRUCT hookStruct = (MSLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(MSLLHOOKSTRUCT));
-                MouseAction(null, new EventArgs()); // Trigger the event when the mouse moves
+                MouseAction(null, new EventArgs());
             }
 
             return CallNextHookEx(_hookID, nCode, wParam, lParam);

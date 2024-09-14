@@ -9,14 +9,13 @@ namespace Winspector.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
-        // ObservableCollection for binding to the DataGrid
         public ObservableCollection<DataGridItem> DataGridItems { get; private set; }
 
         private readonly CancellationTokenSource _cancellationTokenSource;
 
         public MainViewModel()
         {
-            DataGridItems = new ObservableCollection<DataGridItem>(); // Initialize the collection
+            DataGridItems = new ObservableCollection<DataGridItem>();
             _cancellationTokenSource = new CancellationTokenSource();
         }
 
@@ -28,21 +27,19 @@ namespace Winspector.ViewModels
             {
                 try
                 {
-                    // Fetch mouse position and element
                     var mousePosition = MousePosition.GetMousePosition();
                     var element = UIAElement.GetElementFromPoint(mousePosition.Item1, mousePosition.Item2);
 
                     if (element == null || token.IsCancellationRequested)
                     {
-                        return; // Exit if no element or the task is cancelled
+                        return;
                     }
 
                     var uiElement = new UIAElement(element);
 
-                    // Use the dispatcher to update UI
                     Application.Current.Dispatcher.Invoke(() =>
                     {
-                        if (!token.IsCancellationRequested) // Check again before updating UI
+                        if (!token.IsCancellationRequested)
                         {
                             DataGridItems.Clear();
                             foreach (var property in uiElement.Properties)
@@ -58,10 +55,6 @@ namespace Winspector.ViewModels
                             }
                         }
                     });
-                }
-                catch (OperationCanceledException)
-                {
-                    // Task was canceled, handle gracefully if needed
                 }
                 catch (Exception ex)
                 {

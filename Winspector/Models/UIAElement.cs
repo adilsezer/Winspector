@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Windows.Automation;
 
 namespace Winspector.Models
@@ -13,6 +14,8 @@ namespace Winspector.Models
         public string ControlType { get; private set; }
         public Dictionary<string, string> Properties { get; private set; }
 
+        private static readonly int currentProcessId = Process.GetCurrentProcess().Id;
+
         public UIAElement(AutomationElement element)
         {
             if (element == null)
@@ -20,21 +23,24 @@ namespace Winspector.Models
                 throw new ArgumentNullException(nameof(element), "AutomationElement cannot be null");
             }
 
+            // Skip inspection if the element is from the current application
+            if (element.Current.ProcessId == currentProcessId)
+            {
+                throw new InvalidOperationException("Skipping inspection of the current application.");
+            }
+
             Properties = new Dictionary<string, string>();
 
             try
             {
-                // Safely access each property and handle potential nulls
                 Name = SafeGetProperty(() => element.Current.Name, "N/A");
                 ClassName = SafeGetProperty(() => element.Current.ClassName, "N/A");
                 AutomationId = SafeGetProperty(() => element.Current.AutomationId, "N/A");
                 ProcessId = SafeGetProperty(() => element.Current.ProcessId.ToString(), "N/A");
 
-                // Safely handle null ControlType
                 var controlType = SafeGetProperty(() => element.Current.ControlType, null);
                 ControlType = controlType != null ? controlType.ProgrammaticName : "N/A";
 
-                // Add basic properties to the dictionary
                 Properties["Name"] = Name;
                 Properties["Class Name"] = ClassName;
                 Properties["Automation ID"] = AutomationId;
