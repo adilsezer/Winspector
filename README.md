@@ -11,4 +11,4 @@ Winspector is a Windows OS based inspector utility that allows you to dynamicall
 
 ## Screenshot
 ### Main Application GUI and inspecting Notepad application
-![Alt text](https://github.com/adilsezer/Winspector/blob/master/Winspector/Assets/winspector_screenshot.png?raw=true "Winspector")
+![Alt text](https://github.com/adilsezer/Winspector/blob/main/Winspector/Assets/winspector_screenshot.png?raw=true "Winspector")
