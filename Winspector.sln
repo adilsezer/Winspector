@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Winspector", "Winspector\Winspector.csproj", "{2F38A43B-0908-4ED5-A4CD-02549020C273}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Winspector.Tests", "Winspector.Tests\Winspector.Tests.csproj", "{9CF10B37-1698-468B-8337-95093F770EC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{2F38A43B-0908-4ED5-A4CD-02549020C273}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F38A43B-0908-4ED5-A4CD-02549020C273}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F38A43B-0908-4ED5-A4CD-02549020C273}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CF10B37-1698-468B-8337-95093F770EC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CF10B37-1698-468B-8337-95093F770EC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CF10B37-1698-468B-8337-95093F770EC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CF10B37-1698-468B-8337-95093F770EC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

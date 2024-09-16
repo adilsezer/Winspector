@@ -66,7 +66,7 @@ namespace Winspector.Models
         }
 
         // Helper method to safely get a property value with fallback
-        private static T SafeGetProperty<T>(Func<T> propertyGetter, T defaultValue)
+        public static T SafeGetProperty<T>(Func<T> propertyGetter, T defaultValue)
         {
             try
             {
